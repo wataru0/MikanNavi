@@ -37,5 +37,11 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
     }
     
+    @IBAction func postOrangeButtonTapped(_ sender: Any) {
+        let sb: UIStoryboard = UIStoryboard(name: "PostOrangeView", bundle: nil)
+        let po = sb.instantiateViewController(identifier: "PostOrangeView")
+        self.present(po, animated: true, completion: nil)
+    }
+    
 }
 

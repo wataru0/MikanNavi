@@ -5,4 +5,12 @@
 //  Created by 岡本航昇 on 2020/12/26.
 //
 
-import Foundation
+import UIKit
+
+class PostOrangeViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+}
