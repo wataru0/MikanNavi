@@ -11,17 +11,51 @@
         <!--Login View Controller-->
         <scene sceneID="3cO-Un-ydG">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rnj-kk-0Pn" customClass="LoginViewController" customModule="MikanNavi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rnj-kk-0Pn" customClass="LoginViewController" customModule="MikanNavi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vVc-5X-25c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6n-3W-Lle">
+                                <rect key="frame" x="186" y="304" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hub-W3-45E">
+                                <rect key="frame" x="184" y="440" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="Rnj-kk-0Pn" eventType="touchUpInside" id="O9V-ZT-uMn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVn-hD-Y4T">
+                                <rect key="frame" x="100" y="333" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="r9h-kI-wPG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m6n-3W-Lle" firstAttribute="top" secondItem="r9h-kI-wPG" secondAttribute="top" constant="260" id="88g-oJ-mf0"/>
+                            <constraint firstItem="m6n-3W-Lle" firstAttribute="centerX" secondItem="DVn-hD-Y4T" secondAttribute="centerX" id="8qu-2Q-egM"/>
+                            <constraint firstItem="DVn-hD-Y4T" firstAttribute="top" secondItem="m6n-3W-Lle" secondAttribute="bottom" constant="8" id="90m-he-rcx"/>
+                            <constraint firstItem="DVn-hD-Y4T" firstAttribute="centerX" secondItem="Hub-W3-45E" secondAttribute="centerX" id="JLs-HR-ghv"/>
+                            <constraint firstItem="m6n-3W-Lle" firstAttribute="centerX" secondItem="vVc-5X-25c" secondAttribute="centerX" id="R9h-g5-c4f"/>
+                            <constraint firstItem="Hub-W3-45E" firstAttribute="top" secondItem="DVn-hD-Y4T" secondAttribute="bottom" constant="73" id="bGf-BH-VPt"/>
+                            <constraint firstItem="DVn-hD-Y4T" firstAttribute="leading" secondItem="r9h-kI-wPG" secondAttribute="leading" constant="100" id="oaS-qx-tdF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="m6n-3W-Lle" id="DsX-Yx-bNq"/>
+                        <outlet property="registerButton" destination="Hub-W3-45E" id="6Nm-WB-RtK"/>
+                        <outlet property="textField" destination="DVn-hD-Y4T" id="wrq-2b-BuX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3J-ek-POt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
