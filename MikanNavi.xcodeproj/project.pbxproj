@@ -15,6 +15,8 @@
 		17EF78012596EA36003E7DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17EF77FF2596EA36003E7DB9 /* LaunchScreen.storyboard */; };
 		17EF780C2596EA37003E7DB9 /* MikanNaviTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF780B2596EA37003E7DB9 /* MikanNaviTests.swift */; };
 		17EF78172596EA37003E7DB9 /* MikanNaviUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF78162596EA37003E7DB9 /* MikanNaviUITests.swift */; };
+		17EF782C2596EEE5003E7DB9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17EF782B2596EEE5003E7DB9 /* LoginViewController.swift */; };
+		17EF78342596EEF8003E7DB9 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17EF78332596EEF8003E7DB9 /* LoginView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		17EF78122596EA37003E7DB9 /* MikanNaviUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MikanNaviUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17EF78162596EA37003E7DB9 /* MikanNaviUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikanNaviUITests.swift; sourceTree = "<group>"; };
 		17EF78182596EA37003E7DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17EF782B2596EEE5003E7DB9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../LoginViewController.swift; sourceTree = "<group>"; };
+		17EF78332596EEF8003E7DB9 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		17EF77F32596EA2E003E7DB9 /* MikanNavi */ = {
 			isa = PBXGroup;
 			children = (
+				17EF782A2596EEB9003E7DB9 /* LogIn */,
 				17EF77F42596EA2E003E7DB9 /* AppDelegate.swift */,
 				17EF77F62596EA2E003E7DB9 /* SceneDelegate.swift */,
 				17EF77F82596EA2E003E7DB9 /* ViewController.swift */,
@@ -126,6 +131,15 @@
 				17EF78182596EA37003E7DB9 /* Info.plist */,
 			);
 			path = MikanNaviUITests;
+			sourceTree = "<group>";
+		};
+		17EF782A2596EEB9003E7DB9 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				17EF782B2596EEE5003E7DB9 /* LoginViewController.swift */,
+				17EF78332596EEF8003E7DB9 /* LoginView.storyboard */,
+			);
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,7 @@
 				17EF78012596EA36003E7DB9 /* LaunchScreen.storyboard in Resources */,
 				17EF77FE2596EA36003E7DB9 /* Assets.xcassets in Resources */,
 				17EF77FC2596EA2E003E7DB9 /* Main.storyboard in Resources */,
+				17EF78342596EEF8003E7DB9 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EF782C2596EEE5003E7DB9 /* LoginViewController.swift in Sources */,
 				17EF77F92596EA2E003E7DB9 /* ViewController.swift in Sources */,
 				17EF77F52596EA2E003E7DB9 /* AppDelegate.swift in Sources */,
 				17EF77F72596EA2E003E7DB9 /* SceneDelegate.swift in Sources */,
@@ -437,12 +453,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = S87T9D4D6C;
 				INFOPLIST_FILE = MikanNavi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wataru07.MikanNavi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -456,12 +474,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = S87T9D4D6C;
 				INFOPLIST_FILE = MikanNavi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wataru07.MikanNavi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
