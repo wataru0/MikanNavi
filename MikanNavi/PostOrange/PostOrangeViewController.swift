@@ -8,6 +8,7 @@
 import UIKit
 import Eureka
 import ImageRow
+import Alamofire
 
 class PostOrangeViewController: FormViewController {
     
@@ -61,9 +62,18 @@ class PostOrangeViewController: FormViewController {
         
     }
     
+    // POSTの処理
+    func HttpRequest(name: String, title: String) {
+        let url = ""
+        let parameters: [String: Any] = [
+            "name": name,
+            "title": title
+        ]
+    }
+    
     // ボタンが押された時に呼ばれるメソッド
     @objc func buttonEvent(_ sender: UIButton) {
         postButton.backgroundColor = .gray
-        
+        self.dismiss(animated: true, completion: nil)
     }
 }

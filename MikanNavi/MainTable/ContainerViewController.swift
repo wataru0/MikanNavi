@@ -12,6 +12,7 @@ class ContainerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     public var articles: [Article] = []
+    public var mikans: [Mikan] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class ContainerViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         
         getArticles()
+        
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 60, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,32 +37,31 @@ class ContainerViewController: UIViewController {
     // APIリクエスト
     // GETの処理
     func getArticles() {
+//        let url = "https://qiita.com/api/v2/items"
+        let url = "http://liquidmetal.ml/display"
         // Alamofire -> AFになった（新しいバージョン）
-        AF.request("https://qiita.com/api/v2/items", method: .get).responseJSON {
+        AF.request(url, method: .get).responseJSON {
             ( response ) in
             let decoder: JSONDecoder = JSONDecoder()
             do {
                 // decode関数の引数にはJSONからマッピングさせたいクラスをと実際のデータを指定する
-                self.articles = try decoder.decode([Article].self, from: response.data!)
-                print(self.articles[0].title, self.articles.count) // タイトル取得できた
+//                self.articles = try decoder.decode([Article].self, from: response.data!)
+//                // タイトル取得できた
+//                print(self.articles[0].title, self.articles.count)
+                
+                self.mikans = try decoder.decode([Mikan].self, from: response.data!)
+                print(self.mikans, self.mikans.count)
                 self.tableView.reloadData()
             } catch {
                 // JSONの形式とクラスのプロパティが異なっている場合には失敗する
                 print("failed")
-               // print(error.localizedDescription)
+                print(error.localizedDescription)
             }
         }
         
     }
     
-    // POSTの処理
-    func HttpRequest(name: String, title: String) {
-        let url = ""
-        let parameters: [String: Any] = [
-            "name": name,
-            "title": title
-        ]
-    }
+    
 }
 extension ContainerViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -67,8 +69,9 @@ extension ContainerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(articles.count)
-        return articles.count
+//        print(articles.count)
+        //return articles.count
+        return mikans.count
     }
     
     // セル作成
@@ -76,18 +79,13 @@ extension ContainerViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
-        let article = articles[indexPath.row] 
+        //let article = articles[indexPath.row]
+        let mikan = mikans[indexPath.row]
         
-        cell.set(article)
+        cell.set(mikan)
         return cell
     }
-    
-    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    //
-    //        return UITableView.automaticDimension //自動設定
-    //    }
-    
-    
+        
 }
 extension ContainerViewController: UITableViewDelegate {
 }

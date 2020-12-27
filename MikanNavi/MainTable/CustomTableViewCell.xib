@@ -30,11 +30,15 @@
                     </label>
                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7mJ-mY-pZR">
                         <rect key="frame" x="20" y="89" width="327" height="153"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" constant="327" id="R4a-HX-u7F"/>
                             <constraint firstAttribute="height" constant="153" id="VBp-8c-ajV"/>
                             <constraint firstAttribute="width" secondItem="7mJ-mY-pZR" secondAttribute="height" multiplier="326:117" constant="-99.307692307692264" id="gMz-53-iiz"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="WVY-nP-7aA" appends="YES" id="lSq-EX-8de"/>
+                        </connections>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEl-Fg-W6J">
                         <rect key="frame" x="100" y="248" width="40" height="40"/>
@@ -89,8 +93,13 @@
                 <outlet property="titleLabel" destination="vjW-1G-ljI" id="rMk-qg-7yq"/>
                 <outlet property="userNameLabel" destination="Bb1-Pb-c0X" id="ZJ8-Oe-sLQ"/>
             </connections>
-            <point key="canvasLocation" x="148.55072463768118" y="95.424107142857139"/>
+            <point key="canvasLocation" x="296" y="96"/>
         </tableViewCell>
+        <tapGestureRecognizer id="WVY-nP-7aA">
+            <connections>
+                <action selector="imageViewTapped:" destination="KGk-i7-Jjw" id="zSd-82-dGK"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="bad" width="170.66667175292969" height="170.66667175292969"/>
