@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         orangeButton.setImageTintColor(.white, for: .normal)
         orangeButton.imageView?.contentMode = .scaleAspectFit
         
-        self.navigationController?.title = "新着みかん"
+        self.navigationItem.title = "新着みかん"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     override func viewDidAppear(_ animated: Bool) {

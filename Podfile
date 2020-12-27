@@ -9,6 +9,7 @@ target 'MikanNavi' do
   pod 'MaterialComponents'
 #  pod 'Eureka'
   pod 'Nuke'
+  pod 'Alamofire', '~> 5.2'
 
   target 'MikanNaviTests' do
     inherit! :search_paths
