@@ -7,7 +7,7 @@ target 'MikanNavi' do
 
   # Pods for MikanNavi
   pod 'MaterialComponents'
-#  pod 'Eureka'
+  pod 'Eureka'
   pod 'Nuke'
   pod 'Alamofire', '~> 5.2'
 

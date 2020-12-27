@@ -11,7 +11,7 @@ import Alamofire
 class ContainerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var articles: [Article] = []
+    public var articles: [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +32,7 @@ class ContainerViewController: UIViewController {
     }
     
     // APIリクエスト
+    // GETの処理
     func getArticles() {
         // Alamofire -> AFになった（新しいバージョン）
         AF.request("https://qiita.com/api/v2/items", method: .get).responseJSON {
@@ -40,8 +41,8 @@ class ContainerViewController: UIViewController {
             do {
                 // decode関数の引数にはJSONからマッピングさせたいクラスをと実際のデータを指定する
                 self.articles = try decoder.decode([Article].self, from: response.data!)
-                //print(articles[0].title) // タイトル取得できた
-                
+                print(self.articles[0].title, self.articles.count) // タイトル取得できた
+                self.tableView.reloadData()
             } catch {
                 // JSONの形式とクラスのプロパティが異なっている場合には失敗する
                 print("failed")
@@ -50,6 +51,15 @@ class ContainerViewController: UIViewController {
         }
         
     }
+    
+    // POSTの処理
+    func HttpRequest(name: String, title: String) {
+        let url = ""
+        let parameters: [String: Any] = [
+            "name": name,
+            "title": title
+        ]
+    }
 }
 extension ContainerViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,7 +67,8 @@ extension ContainerViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        print(articles.count)
+        return articles.count
     }
     
     // セル作成
@@ -65,7 +76,9 @@ extension ContainerViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
-        cell.set()
+        let article = articles[indexPath.row] 
+        
+        cell.set(article)
         return cell
     }
     

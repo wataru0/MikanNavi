@@ -20,10 +20,14 @@ class CustomTableViewCell: UITableViewCell {
     var gFlag: Bool = false
     var bFlag: Bool = false
     
-    func set() {
+    func set(_ article: Article) {
         
         goodButton.tintColor = .gray
         badButton.tintColor = .gray
+        
+        userNameLabel.text = article.user.id
+        titleLabel.text = article.title
+        
         let url = "https://stat.ameba.jp/user_images/20090522/23/artes/d0/7d/j/t02200165_0480036010184928609.jpg"
         guard let iconUrl = URL(string: url) else { return }
         let options = ImageLoadingOptions(

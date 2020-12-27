@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - Eureka (5.3.2)
   - MaterialComponents (119.3.0):
     - MaterialComponents/ActionSheet (= 119.3.0)
     - "MaterialComponents/ActionSheet+Theming (= 119.3.0)"
@@ -644,12 +645,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - Eureka
   - MaterialComponents
   - Nuke
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Eureka
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -659,6 +662,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Eureka: 1c2b8b5892bfb0e972d0fe05f8c09fd89f8625ec
   MaterialComponents: 49658f0fd7ef6e098e9943fce3f293e700595570
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
@@ -666,6 +670,6 @@ SPEC CHECKSUMS:
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   Nuke: 1394e48b0940e01dd20f52ac56b121ab154e370d
 
-PODFILE CHECKSUM: a1b540153d9efcffd4119b1f8f51c5260b0a6d4c
+PODFILE CHECKSUM: 7df2397078b785079425bd976fc120884985978d
 
 COCOAPODS: 1.9.1
