@@ -9,7 +9,7 @@ import UIKit
 import Nuke
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var mikanImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -24,12 +24,13 @@ class CustomTableViewCell: UITableViewCell {
         
         goodButton.tintColor = .gray
         badButton.tintColor = .gray
+        mikanImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CustomTableViewCell.imageViewTapped(_:))))
         
         userNameLabel.text = mikan.name
         titleLabel.text = mikan.title
         
         // debug用
-        //let url = "https://stat.ameba.jp/user_images/20090522/23/artes/d0/7d/j/t02200165_0480036010184928609.jpg"
+        //        let url = "https://stat.ameba.jp/user_images/20090522/23/artes/d0/7d/j/t02200165_0480036010184928609.jpg"
         let url = "http://liquidmetal.ml/"  + mikan.image_path
         guard let iconUrl = URL(string: url) else { return }
         let options = ImageLoadingOptions(
@@ -40,6 +41,25 @@ class CustomTableViewCell: UITableViewCell {
         Nuke.loadImage(with: iconUrl, options: options, into: mikanImageView)
         
     }
+    func set() {
+        
+        goodButton.tintColor = .gray
+        badButton.tintColor = .gray
+        mikanImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CustomTableViewCell.imageViewTapped(_:))))
+        
+        // debug用
+        let url = "https://stat.ameba.jp/user_images/20090522/23/artes/d0/7d/j/t02200165_0480036010184928609.jpg"
+        //        let url = "http://liquidmetal.ml/"  + mikan.image_path
+        guard let iconUrl = URL(string: url) else { return }
+        let options = ImageLoadingOptions(
+            placeholder: UIImage(named: "load"),
+            failureImage: UIImage(named: "load"),
+            failureImageTransition: .fadeIn(duration: 0.33),
+            contentModes: .init(success: .scaleAspectFill, failure: .scaleToFill, placeholder: .scaleToFill))
+        Nuke.loadImage(with: iconUrl, options: options, into: mikanImageView)
+        
+    }
+    
     @IBAction func goodButtonTapped(_ sender: Any) {
         gFlag = !gFlag
         
@@ -58,7 +78,11 @@ class CustomTableViewCell: UITableViewCell {
             badButton.tintColor = .gray
         }
     }
-    @IBAction func imageViewTapped(_ sender: Any) {
+    // 画像がタップされたら呼ばれる
+    @objc func imageViewTapped(_ sender: UITapGestureRecognizer) {
+        print("タップ")
+        //        NotificationCenter.default.post(name: NSNotification.Name("tap"), object: nil)
+        
     }
     
     override func prepareForReuse() {

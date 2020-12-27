@@ -64,7 +64,7 @@ class PostOrangeViewController: FormViewController {
     
     // POSTの処理
     func HttpRequest(name: String, title: String) {
-        let url = ""
+        let url = "http://liquidmetal.ml/share"
         let parameters: [String: Any] = [
             "name": name,
             "title": title

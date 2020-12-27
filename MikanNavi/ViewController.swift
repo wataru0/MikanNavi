@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         self.navigationItem.title = "新着みかん"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
