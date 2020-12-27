@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         orangeButton.setImageTintColor(.white, for: .normal)
         orangeButton.imageView?.contentMode = .scaleAspectFit
         
-        self.navigationController?.title = "新着みかん"
+        self.navigationItem.title = "新着みかん"
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +37,12 @@ class ViewController: UIViewController {
     }
     @IBAction func debugButtonTapped(_ sender: Any) {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+    }
+    
+    @IBAction func postOrangeButtonTapped(_ sender: Any) {
+        let sb: UIStoryboard = UIStoryboard(name: "PostOrangeView", bundle: nil)
+        let po = sb.instantiateViewController(identifier: "PostOrangeView")
+        self.present(po, animated: true, completion: nil)
     }
     
 }

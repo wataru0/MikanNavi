@@ -7,6 +7,10 @@ target 'MikanNavi' do
 
   # Pods for MikanNavi
   pod 'MaterialComponents'
+  pod 'Eureka'
+  pod 'Nuke'
+  pod 'Alamofire', '~> 5.2'
+  pod 'ImageRow', '~> 4.0'
 
   target 'MikanNaviTests' do
     inherit! :search_paths
