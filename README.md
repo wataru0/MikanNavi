@@ -14,7 +14,15 @@ https://docs.google.com/presentation/d/1-iVbwbyzI2BgpUJsAMmdh5gxC5qWbUA-iNV8UktT
 ## 概要
 - コロナで今年の年末はみかんの消費が増える！
 - みかんの皮アートがあつい！！
+- みかんの皮専用のSNSを作ろう！
 
 ## 技術
+### フロント
+- Swift
+### バック
+- AWS
+- Nginx
+- Node.js
+- MySQL
 
 
